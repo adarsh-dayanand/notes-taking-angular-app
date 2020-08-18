@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit,OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, OnDestroy } from '@angular/core';
 import * as iink from 'iink-js';
 
 @Component({
@@ -6,10 +6,9 @@ import * as iink from 'iink-js';
   templateUrl: './text-recognition.component.html',
   styleUrls: ['./text-recognition.component.css']
 })
-export class TextRecognitionComponent implements OnInit, AfterViewInit,OnDestroy {
+export class TextRecognitionComponent implements OnInit, AfterViewInit, OnDestroy {
   
   editor: any;
-  data: any;
 
   constructor(private elementRef:ElementRef) { }
 
@@ -39,15 +38,19 @@ export class TextRecognitionComponent implements OnInit, AfterViewInit,OnDestroy
 
  onClick(){
 
+  let data = this.editor.domElement.innerText;
   // Head line of the text, Remove the characters and 
   //trim to remove white spaces and line breaks
-  this.data = this.editor.domElement.innerText;
-  this.data = this.data.replace('¶','').replace('...','').trim();
-  alert(this.data);
+ 
+  data = data.replace('¶','').replace('...','').trim();
+  console.log(data);
+
+  alert(data);
   }
 
-  ngOnDestroy(){
-    this.editor.close();
-  }
+
+ ngOnDestroy() : void {
+     this.editor.close();
+ }
 
 }
