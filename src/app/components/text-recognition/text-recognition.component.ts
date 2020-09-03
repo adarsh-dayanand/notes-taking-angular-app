@@ -29,8 +29,8 @@ export class TextRecognitionComponent implements OnInit, AfterViewInit, OnDestro
        server: {
          scheme: 'https',
          host: 'webdemoapi.myscript.com',
-         applicationKey: '53776649-87be-4952-992e-384e4238d013', //AppID
-         hmacKey: '8564e127-5588-4f33-bf33-6e656481e3e5', //H MacID
+         applicationKey: '157bb367-6c8c-4a01-aff6-73947f7a3853', //AppID
+         hmacKey: 'ea8d2a77-a106-47a5-997c-ce301e665fe8', //H MacID
        },
      }
    });
